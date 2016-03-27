@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+ 
+<!-- 
+Added {% csrf_token%}, for security reasons. 
+ -->
+
+<div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card white darken-3">
+            <div class="card-content">
+              <h3 class="card-title">Submit your query</h3>
+              <div class="row"></div>
+				<form   method='POST' action=''>{% csrf_token%} 
+				{{form.as_p}}
+				<input type="submit" value="Submit Query"/>
+				</form>
+				 </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+
+ {% include 'common/footer.html' %}

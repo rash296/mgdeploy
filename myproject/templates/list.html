@@ -1,0 +1,21 @@
+{% load staticfiles %}
+
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+    <!-- List of uploaded documents -->
+    <div class="container">
+    <h3>Downloads</h3>
+    {% if documents %}
+        <ul>
+        {% for document in documents %}
+            <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+    </div>
+
+   
+
+      {% include 'common/footer.html' %}

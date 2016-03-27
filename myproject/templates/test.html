@@ -1,0 +1,43 @@
+  {% load staticfiles %}
+
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+
+<div class="row">
+        <div class="col s12 m4 offset-m4">
+          <div class="card white darken-3">
+            <div class="card-content">
+              <h3 class="card-title">Upload Test Sheet</h3>
+              <div class="row"></div>
+              <form action="{% url 'test' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.testsheet.label_tag }} {{ form.testsheet.help_text }}</p>
+
+            <p>
+                {{ form.testsheet.errors }}
+               {{ form.testsheet}}
+            </p>
+            <div class="card-action">
+            <p><input type="submit" value="Upload" /></p></div>
+        </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+           
+           <!--
+
+ <form action="{% url 'test' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.testsheet.label_tag }} {{ form.testsheet.help_text }}</p>
+            <p>
+                {{ form.testsheet.errors }}
+                {{ form.testsheet}}
+            </p>
+            <p><input type="submit" value="Upload" /></p>
+        </form> -->
+
+    {% include 'common/footer.html' %}       

@@ -1,0 +1,36 @@
+ {% load staticfiles %}
+
+ <div class="navbar-fixed">
+ <nav>
+	<div class="nav-wrapper white">
+      <a href="#" class="brand-logo center black-text" >M.G. Coaching Center</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="collapsible.html" style="color: black;">Login</a></li>
+      </ul>
+       
+    </div>
+  </nav>
+  </div>
+
+  <nav style="
+    height: 30px;
+    line-height: 30px;
+">
+   <div class="nav-wrapper teal lighten-2">
+     
+       <ul id="nav-mobile" class="right hide-on-med-and-down ">
+
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'test' %}">Upload Test</a></li>
+              <li><a href="{% url 'attendance' %}">Upload Attendance</a></li>
+            {% else %}
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'achievement' %}">Achievements</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'list' %}">Download</a></li>
+            {% endif %}
+      </ul>
+       
+  </nav>
+        
