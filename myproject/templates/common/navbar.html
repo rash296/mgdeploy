@@ -19,10 +19,17 @@
    <div class="nav-wrapper teal lighten-2">
      
        <ul id="nav-mobile" class="right hide-on-med-and-down ">
-       <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About Us</a></li>
-        <li><a href="{% url 'achievement' %}">Achievements</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'test' %}">Upload Test</a></li>
+              <li><a href="{% url 'attendance' %}">Upload Attendance</a></li>
+            {% else %}
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'achievement' %}">Achievements</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'list' %}">Download</a></li>
+            {% endif %}
       </ul>
        
   </nav>
