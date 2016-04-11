@@ -5,6 +5,7 @@ from .models import Document
 from .forms import DocumentForm
 #from .views import handle_uploaded_file
 
+
 from .models import Test, TestRecord,Attendance, AttendanceRecord,MonthlyWeatherByCity,  Schedules, News
 from .forms import TestForm
 
@@ -79,6 +80,7 @@ class AttendanceRecordAdmin(admin.ModelAdmin):
 
 class MonthlyWeatherByCityAdmin(admin.ModelAdmin):
 	list_display=[]
+
 
 class NewsAdmin(admin.ModelAdmin):
 	list_display=["message_ID"]

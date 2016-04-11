@@ -2,10 +2,11 @@
 
 {% include 'common/header.html' %}
 {% include 'common/navbar2.html' %}
- 
+
 <!-- 
 Added {% csrf_token%}, for security reasons. 
  -->
+
 <section id="first">
 <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -17,6 +18,7 @@ Added {% csrf_token%}, for security reasons.
 				{{form.as_p}}
 				<input type="submit" value="Submit Query"/>
 				</form>
+
 				
         </div>
       </div>

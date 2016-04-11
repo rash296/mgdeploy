@@ -1,11 +1,14 @@
+
 import re
 import csv
 from django import forms
 from io import TextIOWrapper
 
+
 from .models import Test,Attendance
 
 from .models import SignUp
+
 
 
 from django.contrib.auth.models import User
@@ -31,7 +34,7 @@ class RegistrationForm(forms.Form):
                 raise forms.ValidationError(_("The two password fields did not match."))
         return self.cleaned_data
 
-        
+
 class QueryForm(forms.Form):
 	
 	Your_email=forms.EmailField()
@@ -50,6 +53,7 @@ class DocumentForm(forms.Form):
 		help_text="max 42 MB"
 		)
 
+
 class StudentForm(forms.Form):
 	studentsheet=forms.FileField(
 		label="Select a file",
@@ -63,6 +67,7 @@ class ParentForm(forms.Form):
 		help_text="Must be csv"
 
 		)	
+
 class TestForm(forms.Form):
 	#class Meta:
 	#	model=Test
@@ -75,6 +80,7 @@ class TestForm(forms.Form):
 		help_text="Must be csv"
 		
 		)
+
 
 
 	

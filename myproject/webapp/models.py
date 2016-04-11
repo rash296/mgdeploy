@@ -5,6 +5,7 @@ import os
 
 # Create your models here.
 
+
 class Document(models.Model):
 	docfile=models.FileField(upload_to="documents/%d")
 	#timestamp=models.DateTimeField(auto_now_add=True,auto_now=False)
@@ -23,6 +24,7 @@ class TestRecord(models.Model):
 
 	def __unicode__(self):
 		return self.stud_name
+
 
 class StudentSheet(models.Model):
 	studentsheet=models.FileField(upload_to="student/%Y/%m/%d")
@@ -88,6 +90,7 @@ class MonthlyWeatherByCity(models.Model):
 
 	#def __unicode__(self):
 	#	return self.month
+
 
 class Schedules(models.Model):
 	date=models.DateField(auto_now=False, auto_now_add=False)

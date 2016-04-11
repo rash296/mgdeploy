@@ -1,6 +1,7 @@
 .banner-image{
 	width:100%;
 	height: 100%;
+
 }
 html {
   position: relative;
@@ -22,4 +23,3 @@ body {
 #first{
   margin-top: 100px
 }
-

@@ -10,8 +10,9 @@
             <div class="card-content">
               <h3 class="card-title">Upload Attendance Sheet</h3>
               <div class="row"></div>
+
              <form action="/attendance/" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+        {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
             <p>{{ form.attendancesheet.label_tag }} {{ form.attendancesheet.help_text }}</p>
 
@@ -27,6 +28,5 @@
           </div>
         </div>
       </div>-->
-            
 
     {% include 'common/footer.html' %}  

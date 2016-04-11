@@ -8,6 +8,7 @@ from django.contrib import admin
 
 urlpatterns = [
 	url(r'^$', 'webapp.views.home', name='home'),
+
     url(r'^home/$', 'webapp.views.home', name='home'),
     #url(r'^login/$','webapp.views.login_user'),
 	url(r'^contact/$', 'webapp.views.contact', name='contact'),
@@ -22,6 +23,7 @@ urlpatterns = [
     url(r'^query/$', 'webapp.views.query', name='query'),
     url(r'^notify/$', 'webapp.views.notify', name='notify'),
     url(r'^profile/$', 'webapp.views.profile', name='profile'),
+
     url(r'^log/$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', 'webapp.views.logout_page',name="logout"),
     #url(r'^login/$', 'webapp.contrib.auth.views.login''webapp.views.user',name="login"), # If user is not login it will redirect to login page  
