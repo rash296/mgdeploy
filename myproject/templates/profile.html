@@ -1,37 +1,79 @@
 {% load staticfiles %}
+{% load chartit %}
+    {{ chart|load_charts:"container" }}                    
+     
 
 {% include 'common/header.html' %}
-{% include 'common/navbar.html' %}
+{% include 'common/navbar2.html' %}
 
-<h3>Student Profile of ID 20</h3>
+
+
+<section id="first">
+
+<h3>{{stud_ID}}</h3>
 {% if testset %}
 
 <div class="container">
-<h4>Test Score</h4>
-<table class="bordered">
-<thead>
-          <tr>
-              <th data-field="id">Test No.</th>
-              <th data-field="name">Test Score</th>
-              
-          </tr>
-        </thead>
-{% for i in testset %}
+	<div class="col-md-8 col-md-offset-2">
+		<h2><b>Test Score</b></h2>
+		<hr>
+			<table class="table table-striped">
+			<thead>
+			          <tr>
+			              <th data-field="id">Test No.</th>
+			              <th data-field="name">Test Score</th>
+			              <th data-field="name">Test Average</th>
+			              
+			          </tr>
+			        </thead>
+			{% for i in testset %}
 
-<tr>
-		<td>{{i.test_no}}</td><td>{{i.stud_score}}</td>
-		</tr>
+			<tr>
+					<td>{{i.test_no}}</td><td>{{i.stud_score}}</td><td>{{i.test_avg}}</td>
+					</tr>
 
-{% endfor %}
-</table>
+			{% endfor %}
+			</table>
+		</div>	
 </div>
 {% endif %}
+</section>
 
-<div class="container">
+<div class="container" id="first">
+	<div class="col-md-8 col-md-offset-2">
+		<h2><b>Attendance</b></h2>
+		<hr>
+		
+		<table class="table table-striped">
+				<thead>
+				          <tr>
+				              <th data-field="attend">Attended</th>
+				              <th data-field="total">Total Days</th>
+				            </tr>
+				 </thead>
+				 <tr>
+				 	<td>{{count}}</td>
+				 	<td> {{total}}</td>
+				 </tr>  
+		</table>		          
+
+	</div>
 {% if atttest %}
 <h4> Total Attendance : {{count}}</h4>
 {% endif %}
 </div>
+
+<div class="row"></div>
+<div class="row"></div>
+
+<div class="container" id="first">
+	<div class="col-md-8 col-md-offset-2">
+		<h2><b><center>Graphical Representation of Student Performance</center></b></h2>
+		
+	</div>
+<div id="container" id="first"> Chart will be rendered here </div>
+
+</div> 
 
 
 

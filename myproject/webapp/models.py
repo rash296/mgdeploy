@@ -16,6 +16,7 @@ class TestRecord(models.Model):
 	stud_name=models.CharField(max_length=30,null=True)
 	stud_score=models.IntegerField(null=True)
 	test_no=models.IntegerField(null=True)
+	test_avg=models.IntegerField(null=True)
 
 	class Meta:
 		unique_together=(('stud_ID','test_no'),)
@@ -23,7 +24,15 @@ class TestRecord(models.Model):
 	def __unicode__(self):
 		return self.stud_name
 
+class StudentSheet(models.Model):
+	studentsheet=models.FileField(upload_to="student/%Y/%m/%d")
 
+class ParentSheet(models.Model):
+	parentsheet=models.FileField(upload_to="parent/%Y/%m/%d")	
+
+class News(models.Model):
+	message_ID=models.IntegerField(null=True)
+	message=models.CharField(max_length=200)	
    
 class Test(models.Model):
 	testsheet=models.FileField(upload_to="test/%Y/%m/%d")	
@@ -72,5 +81,15 @@ class SignUp(models.Model):
 		return self.email		
 
 
-   	
+class MonthlyWeatherByCity(models.Model):
+	month = models.IntegerField()
+	boston_temp = models.DecimalField(max_digits=5, decimal_places=1)
+	houston_temp = models.DecimalField(max_digits=5, decimal_places=1)
 
+	#def __unicode__(self):
+	#	return self.month
+
+class Schedules(models.Model):
+	date=models.DateField(auto_now=False, auto_now_add=False)
+	title=models.CharField(max_length=50,null=True)
+	batch=models.IntegerField(null=True)

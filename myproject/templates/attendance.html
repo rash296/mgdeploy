@@ -10,7 +10,7 @@
             <div class="card-content">
               <h3 class="card-title">Upload Attendance Sheet</h3>
               <div class="row"></div>
-             <form action="{% url 'attendance' %}" method="post" enctype="multipart/form-data">
+             <form action="/attendance/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
             <p>{{ form.attendancesheet.label_tag }} {{ form.attendancesheet.help_text }}</p>
@@ -27,18 +27,6 @@
           </div>
         </div>
       </div>-->
-            <!--
-
- <form action="{% url 'test' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <p>{{ form.non_field_errors }}</p>
-            <p>{{ form.testsheet.label_tag }} {{ form.testsheet.help_text }}</p>
-            <p>
-                {{ form.testsheet.errors }}
-                {{ form.testsheet}}
-            </p>
-            <p><input type="submit" value="Upload" /></p>
-        </form>
--->
+            
 
     {% include 'common/footer.html' %}  

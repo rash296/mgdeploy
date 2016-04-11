@@ -5,7 +5,7 @@ from .models import Document
 from .forms import DocumentForm
 #from .views import handle_uploaded_file
 
-from .models import Test, TestRecord,Attendance, AttendanceRecord
+from .models import Test, TestRecord,Attendance, AttendanceRecord,MonthlyWeatherByCity,  Schedules, News
 from .forms import TestForm
 
 class DocumentAdmin(admin.ModelAdmin):
@@ -68,22 +68,30 @@ class TestAdmin(admin.ModelAdmin):
 
 	
 class TestRecordAdmin(admin.ModelAdmin):
-	list_display=["__unicode__","stud_score"]		
+	list_display=["__unicode__","stud_score","test_no"]		
 
 
 class AttendanceAdmin(admin.ModelAdmin):
 	list_display=["attendancename","extension"]	
 
 class AttendanceRecordAdmin(admin.ModelAdmin):
-	list_display=["__unicode__","stud_presence"]		
+	list_display=["__unicode__","stud_presence"]
+
+class MonthlyWeatherByCityAdmin(admin.ModelAdmin):
+	list_display=[]
+
+class NewsAdmin(admin.ModelAdmin):
+	list_display=["message_ID"]
+
+class SchedulesAdmin(admin.ModelAdmin):
+	list_display=["title"]
 
 
-
-
-	
-
+admin.site.register(Schedules, SchedulesAdmin)	
+admin.site.register(News, NewsAdmin)
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(Test, TestAdmin)
 admin.site.register(Attendance, AttendanceAdmin)
 admin.site.register(AttendanceRecord, AttendanceRecordAdmin)
 admin.site.register(TestRecord, TestRecordAdmin)
+admin.site.register(MonthlyWeatherByCity, MonthlyWeatherByCityAdmin)

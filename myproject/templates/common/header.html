@@ -1,14 +1,57 @@
 {% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MG EDUCATION</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Include Bootstrap Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <!-- Include Bootstrap Min Css -->
+  <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap-theme.min.css'%}">
+  <!-- Include Animate Min Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/animate.min.css'%}">
+  <!-- Include Fontawesome Min Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css'%}">
+  <!-- Include Magnific PopUp Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css'%}">
+  <!-- bxSlider CSS file -->
+  <link href="{% static 'assets/css/jquery.bxslider.css'%}" rel="stylesheet" />
+  <!-- Include Style Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+  <!-- Include Responsive Css -->
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.min.css '%}">
+  <!-- Include Modernizer Js -->
+  <script src="{% static 'assets/js/modernizr-2.8.3-respond-1.4.2.min.js '%}" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+   <script src="http://code.highcharts.com/highcharts.js"></script>
+   {% if chart %}
+   {% load chartit %}
+    {{ chart|load_charts:"container" }}
+   {% endif %} 
+  
+</head>
+<body>
+
+<!--
 <!DOCTYPE html>
   <html>
     <head>
-      <!--Import Google Icon Font-->
+      
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
-      <!--Let browser know website is optimized for mobile-->
+      
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
        <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>       
+  
     </head>
-    <body>
+    <body>-->

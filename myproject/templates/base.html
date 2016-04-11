@@ -1,27 +1,181 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<html>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-       <link href="{% static 'css/custom.css' %}" rel="stylesheet">
-    </head>
+<head>
+  <title>M.G.Coaching-Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <body>
-   {% include 'navbar.html' %}
-   <div class="row">
-   <img src="{% static 'img/images.jpg' %}" class="banner-image">
-   </div>
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-     
-    </body>
-  </html>
+</head>
+<style type="text/css">
+  body{
+    margin: 0px auto;
+    padding-top: 0px;
+  }
+
+</style>
+<body>
+    <style>
+  .nav-wrapper{
+    padding-bottom: 100px;
+    background-color:#009688;
+    
+  }
+.ig{
+  margin-top: 60px;
+ background-color:white;
+  padding-bottom: 100px;
+  text-align: center;
+ padding-right: 200px;
+
+}
+.containere{
+margin-right: 40px;
+margin-left: 40px;
+}
+.pi{
+ height: auto;
+ max-width: 80%;
+  margin-left: 80px;
+
+}
+</style>
+<nav>
+<div class="nav-wrapper">
+      <a href="Home.html" class="brand-logo left">Logo</a>
+      
+         <ul  class="right hide-on-med-and-down">
         
+        
+        <li class="right-align"><a href="login.html" class="waves-effect waves-light btn-large">LogIn</a></li>
+      </ul>
+      <a  href="Home.html"><h2 class="center-align">M.G.Coaching</h2></a>
+    </div>
+
+  </nav>
+<div class="containere">
+    <div class="row">
+ <nav class="ig">
+<ul class="pi" id="horizontal-style">
+
+        <li><a class="w teal-text" href="index.html">Home</a></li>
+        <li><a class="a teal-text" href="About.html">About Us</a></li>
+        <li><a class="s teal-text"href="Achievement.html">Achievement</a></li>
+<li><a class="a teal-text" href="contact.html">Contact Us</a></li>
+</ul>
+    </div>
+  </nav>
+</div>
+       </div>
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="image/1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="image/2.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="image/3.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="image/2.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+    <div class="card-panel teal accent-2 black-text">
+      <h4>Welcome To M.G.Coaching Institute</h4>
+<p >Styles, which exists within the new Craft Manager, will create a new page within your Sketch file with your project’s color palette, fonts, and text styles. You can add custom elements like buttons, symbols, and more, too.
+
+Need to make a project-wide style change? Just change the Styles-generated guide and it will sync the change across your entire project.
+
+When you update or download Craft, you’ll get Styles, as well as the new Craft Manager. The Manager exists on your desktop and makes future updates a breeze.
+
+Discover what the design.
+    </p></div>
+
+
+    <div class="card-panel">
+      <h4>News Feed</h4>
+      <p >I am Flow Text.Automatically populate your design from a preset database of names, email addresses, countries, cities, ZIP codes, and more. Or pull from a webpage or your own private files with Type. Contextually relevant content lets you make better UI decisions and accelerates your workflow.
+
+
+
+Craft is a product of LABS, our newest project to nurture and create the design tools of the future. More is coming soon, so stay tuned.</p></div>
+
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+     copyright &copy; 2016  <a class="orange-text text-lighten-3" href="Home.html">MGCocaching.com/org/in</a> | All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+ </script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+       $('ul.tabs').tabs();
+    });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+  });
+</script>
+</body>
+</html>

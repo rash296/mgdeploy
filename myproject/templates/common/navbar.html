@@ -1,36 +1,104 @@
  {% load staticfiles %}
 
+ <header id="masthead" class="masthead navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="./"><img src="{% static 'images/icon.png' %}" alt="Site Logo" style="width:35px;height:35px;"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <nav id="main-menu" class="collapse navbar-collapse pull-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/home">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/achievement">Achievements</a></li>
+          <li><a href="/contact">Contact</a></li>
+          
+          <li ><a href="/log">Login</a></li>
+        </ul>
+      </nav><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </header><!-- /#masthead -->
+
+
+
+<!--
+
+  <style>
+  .nav-wrapper{
+    padding-bottom: 100px;
+    background-color:#009688;
+    height: 20px;
+   }
+
+  .ig{
+  
+ background-color:white;
+  
+  text-align: center;
+ 
+ height: 30px;
+
+    
+
+}
+.containere{
+margin-right: 40px;
+margin-left: 40px;
+}
+.pi{
+ height: auto;
+ max-width: 80%;
+  margin-left: 80px;
+
+}
+   </style> 
+
  <div class="navbar-fixed">
- <nav>
-	<div class="nav-wrapper white">
-      <a href="#" class="brand-logo center black-text" >M.G. Coaching Center</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="collapsible.html" style="color: black;">Login</a></li>
+ 
+	<nav class="nav-wrapper ">
+      <a href="/" class="brand-logo center black-text" >M.G. Coaching Center</a>
+      <ul class="right hide-on-med-and-down">
+      <li><a class="waves-effect waves-light btn-large" href="/log" style="color: black;">Login</a></li>
       </ul>
        
+    </nav>
     </div>
-  </nav>
-  </div>
+  
+  
 
-  <nav style="
+  <nav class="ig" style="
     height: 30px;
     line-height: 30px;
+    
 ">
-   <div class="nav-wrapper teal lighten-2">
+  <!-- <div class="nav-wrapper teal lighten-2">
+  
+    <div class="row">
+    <nav class="ig">
+    <ul id="horizontal-style">
+
      
-       <ul id="nav-mobile" class="right hide-on-med-and-down ">
+    <!--   <ul id="nav-mobile" class="right hide-on-med-and-down ">
 
         {% if request.user.is_authenticated %}
-            <li><a href="{% url 'test' %}">Upload Test</a></li>
-              <li><a href="{% url 'attendance' %}">Upload Attendance</a></li>
+            <li><a class="w teal-text" href='/test'>Upload Test</a></li>
+              <li><a class="w teal-text" href="/attendance">Upload Attendance</a></li>
             {% else %}
-              <li><a href="{% url 'home' %}">Home</a></li>
-              <li><a href="{% url 'about' %}">About Us</a></li>
-              <li><a href="{% url 'achievement' %}">Achievements</a></li>
-              <li><a href="{% url 'contact' %}">Contact</a></li>
-              <li><a href="{% url 'list' %}">Download</a></li>
+              <li><a class="w teal-text" href="/home">Home</a></li>
+              <li><a class="a teal-text" href="/about">About Us</a></li>
+              <li><a class="s teal-text" href="/achievements">Achievements</a></li>
+              <li><a class="a teal-text" href="/contact">Contact</a></li>
+              <li><a class="s teal-text" href="/list">Download</a></li>
             {% endif %}
       </ul>
+      </nav>
+      </div> -->
+    
        
-  </nav>
+  
         

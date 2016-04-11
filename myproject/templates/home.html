@@ -2,15 +2,192 @@
 
 {% include 'common/header.html' %}
 {% include 'common/navbar.html' %}
-   <div class="row">
+
+ <section id="main-slider" class="main-slider text-center">
+    <div class="head-overlay">
+      <ul class="bxslider">
+         <div class="col-md-3 col-sm-6">
+        <li>
+          <div class="head-overlay">
+            <img src="{% static 'images/slider/student1.jpg' %}" style="height:760px; width:1400px"/>
+          </div><!-- /.head-overlay -->
+          <div class="slider-text">
+            <div class="slide-inner">
+              <h2 class="slider-title" data-animation="wow animated bounceInDown">Welcome to <span>MG EDUCATION</span></h2>
+              <p class="slide-description">Your child's second parent</p>
+              <div class="slide-btn-container">
+                <a class="btn" href="http://google.com">View</a>
+              </div><!-- /.slide-btn-container -->
+            </div><!-- /.slide-inner -->
+          </div><!-- /.slider-text -->
+          
+        </li>
+         </div> <!-- responsive -->  
+
+         <div class="col-md-3 col-sm-6">
+        <li>
+          <div class="head-overlay">
+            <img src="{% static 'images/slider/student2.jpg'%}"  style="height:760px; width:1400px"/>
+          </div><!-- /.head-overlay -->
+          <div class="slider-text">
+            <div class="slide-inner">
+              <h2 class="slider-title">A<span>JOURNEY</span> to knowledge</h2>
+              <p class="slide-description">building a child of value</p>
+              <div class="slide-btn-container">
+                <a class="btn" href="http://google.com">View</a>
+              </div><!-- /.slide-btn-container -->
+            </div><!-- /.slide-inner -->
+          </div><!-- /.slider-text -->
+        
+        </li>
+        </div><!-- /. responsive-->
+        
+      </ul>
+    </div><!-- /.head-overlay -->
+  </section><!-- /#main-slider --> 
+
+  <!-- Main Slider -->
+
+<!-- Service Section -->
+
+  <div class="clearfix"></div><!-- /.clearfix -->
+
+
+  
+
+  
+
+  <!-- Quote Section -->
+
+  <section id="testimonial" class="testimonial text-center" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
+    <div class="pattern-overlay">
+      <div class="section-padding">
+        <div class="container">
+          <div class="section-top wow animated fadeInUp" data-wow-delay=".5s">
+            <h2 class="section-title">Our Goals</h2><!-- /.section-title -->
+          </div><!-- /.section-top -->
+          <div class="section-details wow animated fadeInUp" data-wow-delay=".5s">
+            <div id="testimonial-slider" class="testimonial-slider carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#testimonial-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonial-slider" data-slide-to="1"></li>
+                <li data-target="#testimonial-slider" data-slide-to="2"></li>
+                <li data-target="#testimonial-slider" data-slide-to="3"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <blockquote class="client-quote">
+                    Eat icecream everyday
+                  </blockquote><!-- /.client-quote -->
+                </div><!-- /.item -->
+                <div class="item">
+                  <blockquote class="client-quote">
+                    Sleep....... everyday
+                  </blockquote><!-- /.client-quote -->
+                </div><!-- /.item -->
+                <div class="item">
+                  <blockquote class="client-quote">
+                    Study........everyday 
+                  </blockquote><!-- /.client-quote -->
+                </div><!-- /.item -->
+                <div class="item">
+                  <blockquote class="client-quote">
+                    Repeat.....everyday 
+                  </blockquote><!-- /.client-quote -->
+                </div><!-- /.item -->
+              </div>
+            </div><!-- /#testimonial-slider -->
+          </div><!-- /.section-details -->
+        </div><!-- /.container -->
+      </div><!-- /.section-padding -->
+    </div><!-- /.pattern-overlay -->
+  </section><!-- /#testimonial -->
+
+<!--   <div class="row">
   		<img src="{% static 'img/images.jpg' %}" class="banner-image">
    </div>
+   <div class="slider">
+    <ul class="slides">
+      <li>
+        <img "{% static 'img/images.jpg' %}" class="banner-image"> <!-- random image 
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img "{% static 'img/images.jpg' %}" class="banner-image"> <!-- random image 
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img "{% static 'img/images.jpg' %}" class="banner-image"> <!-- random image 
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img "{% static 'img/images.jpg' %}" class="banner-image"> <!-- random image 
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+   
 
-   <div class="container">
+  <!-- <div class="container">
    		<div class="row center">
    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
    		</div>
-   </div>
+   </div> 
+
+   <div class="card-panel teal accent-2 black-text">
+      <h4>Welcome To M.G.Coaching Institute</h4>
+<p >Styles, which exists within the new Craft Manager, will create a new page within your Sketch file with your project’s color palette, fonts, and text styles. You can add custom elements like buttons, symbols, and more, too.
+
+Need to make a project-wide style change? Just change the Styles-generated guide and it will sync the change across your entire project.
+
+When you update or download Craft, you’ll get Styles, as well as the new Craft Manager. The Manager exists on your desktop and makes future updates a breeze.
+
+Discover what the design.
+    </p></div>
+
+
+    <div class="card-panel">
+      <h4>News Feed</h4>
+      <p >I am Flow Text.Automatically populate your design from a preset database of names, email addresses, countries, cities, ZIP codes, and more. Or pull from a webpage or your own private files with Type. Contextually relevant content lets you make better UI decisions and accelerates your workflow.
+
+
+
+Craft is a product of LABS, our newest project to nurture and create the design tools of the future. More is coming soon, so stay tuned.</p></div>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+ </script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+       $('ul.tabs').tabs();
+    });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+  });
+</script>
+
+
      
     
 {% include 'common/footer.html' %}
