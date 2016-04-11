@@ -1,0 +1,27 @@
+
+{% load staticfiles %}
+
+{% include 'common/header.html' %}
+{% include 'common/navbar2.html' %}
+
+
+<section id="first">
+    <div class="container">
+
+    <p>Welcome {{ user.first_name }} !!!</p>
+    <p>Welcome {{ user.groups.all.0.name }} !!!</p>
+    <a href="/logout/">Logout</a>
+    <p> </p>
+    <a href="/logged_in/">Check group</a>
+    
+    {% ifequal user.groups.all.0.name 'Student' %}
+    <p>This is a Student</p>
+    {% else %}
+    <p>This is a parent </p>
+    {% endifequal %}
+    
+    </div>
+
+</section>    
+{% include 'common/footer.html' %}    
+

@@ -1,0 +1,9 @@
+{% if user.is_authenticated %}
+    <p>
+    Welcome, {{ user.groups.group_name }}
+    <a href="{% url 'login:password_change' %}">[Change Password]</a>
+    <a href="{% url 'login:logout' %}">[logout]</a>
+    </p>
+{% else %}
+    <p>Welcome, Guest <a href="{% url 'login:login' %}">[login]</a></p>
+{% endif %}

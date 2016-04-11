@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+
+<section id="first">
+<div class='row'>
+<div class='col-sm-4 col-sm-offset-4'>
+<center><h1>Please Login</h1></center>
+<hr>
+
+    
+   {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+      <form method="post" action=".">{% csrf_token %}
+        <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                    <label for="id_username">Username:</label></div>
+                    
+                    <div class="col-sm-6">
+                    {{ form.username }}</div>
+                </div>
+        </div>
+        <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                    <label for="id_password">Password:</label></div>
+                    <div class="col-sm-6">{{ form.password }}</div>
+                </div>
+        </div>
+           
+                <div class="row">
+                    <input class= "btn btn-lg btn-primary btn-blocktype" type ="submit" value="Login" />
+                    <input type="hidden" name="next" value="/loginhome" /></div>
+        </div>            
+    </form>
+        <a href="/register">Register</a>
+                </div>
+            </div>
+        
+    </section>
+
+{% include 'common/footer.html' %}
