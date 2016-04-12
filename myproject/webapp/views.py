@@ -173,7 +173,7 @@ def notify(request):
 
 
 def profile(request):
-<<<<<<< HEAD
+
 	if request.user.groups.filter(name='Student').exists():
 		stud_ID=request.user.get_username()
 		
