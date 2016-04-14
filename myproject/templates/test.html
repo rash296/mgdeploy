@@ -6,7 +6,7 @@
 <section id="first">
 <div class="container">
         <div class="row">
-          <div class="col-sm-4 col-sm-offset-4">
+          <div class="col-md-4 col-md-offset-4">
             
               <h3>Upload Test Sheet</h3>
               <hr>
@@ -14,6 +14,30 @@
               <form action="/test/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}</p>
+            
+            <div class="row">
+              <div class="col-md-6 ">
+                <p>Test no : </p>
+              </div>
+            <div class="col-md-6 ">
+              
+                {{ form.test_no.errors }}
+               {{ form.test_no}}
+               </div>
+            </div>
+            <br/>
+            <div class="row">
+              <div class="col-md-6 ">
+                <p>Test Average</p>
+              </div>
+
+            <div class="col-md-6 ">
+            <p>
+                {{ form.test_avg.errors }}
+               {{ form.test_avg}}
+            </p></div>
+            </div><br/>
+
             <p>{{ form.testsheet.label_tag }} {{ form.testsheet.help_text }}</p>
 
             <p>

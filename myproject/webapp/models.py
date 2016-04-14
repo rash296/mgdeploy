@@ -19,8 +19,8 @@ class TestRecord(models.Model):
 	test_no=models.IntegerField(null=True)
 	test_avg=models.IntegerField(null=True)
 
-	class Meta:
-		unique_together=(('stud_ID','test_no'),)
+	#class Meta:
+	#	unique_together=(('stud_ID','test_no'),)
 
 	def __unicode__(self):
 		return self.stud_name
@@ -37,6 +37,8 @@ class News(models.Model):
 	message=models.CharField(max_length=200)	
    
 class Test(models.Model):
+	#test_no=models.IntegerField(null=True)
+	#test_avg=models.IntegerField(null=True)
 	testsheet=models.FileField(upload_to="test/%Y/%m/%d")	
 	
 	def testname(self):

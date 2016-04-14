@@ -61,6 +61,17 @@ class StudentForm(forms.Form):
 
 		)
 
+	def clean_studentsheet(self):
+		studentsheet = self.cleaned_data.get("studentsheet", False)
+		filetype = studentsheet.name.split('.')[1]
+		#filetype = magic.from_buffer(file.read())
+		print filetype
+		if not "csv" in filetype:
+			raise forms.ValidationError("File is not csv.")
+		
+		return studentsheet
+
+
 class ParentForm(forms.Form):
 	parentsheet=forms.FileField(
 		label="Select a file",
@@ -68,23 +79,30 @@ class ParentForm(forms.Form):
 
 		)	
 
+	def clean_parentsheet(self):
+		parentsheet = self.cleaned_data.get("parentsheet", False)
+		filetype = parentsheet.name.split('.')[1]
+		#filetype = magic.from_buffer(file.read())
+		print filetype
+		if not "csv" in filetype:
+			raise forms.ValidationError("File is not csv.")
+		
+		return parentsheet
+
 class TestForm(forms.Form):
 	#class Meta:
 	#	model=Test
-	#	fields=['testsheet']
-
+	#	fields=['test_no','test_avg','testsheet']
 	
+	test_no=forms.IntegerField()
+	test_avg=forms.IntegerField()
 	testsheet=forms.FileField(
 		#widget=forms.ClearableFileInputButton(attrs={'class' : 'waves-effect waves-light btn white-text'}),
 		label="Select a file",
-		help_text="Must be csv"
+		help_text="Must be csv in the format : ID, name, score "
 		
 		)
 
-
-
-	
-	
 
 	def clean_testsheet(self):
 		testsheet = self.cleaned_data.get("testsheet", False)
@@ -99,16 +117,23 @@ class TestForm(forms.Form):
 
 class AttendanceForm(forms.Form):
 	
+	attendance_no=forms.IntegerField()
 	attendancesheet=forms.FileField(
 		#widget=forms.ClearableFileInputButton(attrs={'class' : 'waves-effect waves-light btn white-text'}),
 		label="Select a file",
-		help_text="Must be csv"
+		help_text="Must be csv with format : ID, name, presence"
 		
 		)
 
 
+	def clean_attendancesheet(self):
+		attendancesheet = self.cleaned_data.get("attendancesheet", False)
+		filetype = attendancesheet.name.split('.')[1]
+		#filetype = magic.from_buffer(file.read())
+		print filetype
+		if not "csv" in filetype:
+			raise forms.ValidationError("File is not csv.")
+		
+		return attendancesheet
 
-'''class UploadFileForm(forms.Form):
-	title = forms.CharField(max_length=50)
-	filename = forms.FileField(label="Select a file",
-		help_text="Must be csv")	'''
+

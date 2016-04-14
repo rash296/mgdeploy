@@ -32,6 +32,7 @@ from django.contrib.auth import authenticate, login
 
 
 
+# Handles Registration page
 
 @csrf_protect
 def register(request):
@@ -52,21 +53,23 @@ def register(request):
 
 	return render_to_response('registration/register.html',variables,)
  
+
 def register_success(request):
 	return render_to_response(
     'registration/success.html',
     )
  
+
 def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/')
  
+
 @login_required
 def loginhome(request):
 	#user = User.objects.create_user(username='131001.P',password='131001')
 	#user.groups.add(Group.objects.get(name='Parent'))
 	return render_to_response('loginhome.html',{ 'user': request.user })
-
 
 
 
@@ -90,6 +93,8 @@ def user(request):
 
 	return render_to_response('loginhome.html', context,context_instance=RequestContext(request))
 
+
+
 def announcements(request):
 	schedule=Schedules.objects.all().order_by('date')
 	#testset=TestRecord.objects.all()
@@ -108,6 +113,8 @@ def announcements(request):
 	}
 	return render(request,'announcement.html',context)
 
+
+
 def query(request):
 	form=QueryForm(request.POST or None)
 	if form.is_valid():
@@ -123,23 +130,19 @@ def query(request):
 				form_message)
 		
        
-        		
-        		
-		send_mail(subject,
+        send_mail(subject,
 			query_message,
 			from_email,
 			to_email,
 			fail_silently=False)
 
-
-
-		
 	context={
         "form":form,
 
 
 	}
 	return render(request,"forms.html",context)
+
 
 
 def notify(request):
@@ -172,29 +175,31 @@ def notify(request):
 	return render(request,"notify.html",context)	
 
 
+
 def profile(request):
 
-	if request.user.groups.filter(name='Student').exists():
+	if request.user.groups.filter(name='Student').exists():  #Checks if user is Student
 		stud_ID=request.user.get_username()
 		
 
-	elif request.user.groups.filter(name='Parent').exists():
+	elif request.user.groups.filter(name='Parent').exists(): #Checks if user is Parent
 		line=request.user.get_username().split('.')
 		stud_ID=line[0]
 		
 	else:
-		stud_ID=131001
+		stud_ID=131001		#default
 
 		
-	testset=TestRecord.objects.all().filter(stud_ID=stud_ID).order_by('test_no')
-	attset=AttendanceRecord.objects.all().filter(stud_ID=stud_ID)
+	testset=TestRecord.objects.all().filter(stud_ID=stud_ID).order_by('test_no') #returns the test records with the user's id
+
+	attset=AttendanceRecord.objects.all().filter(stud_ID=stud_ID)	#returns set of attendance records with user's ID
 
 	count=0
 	total=0
 	
 
 	for i in attset:
-		total=total+1
+		total=total+1		#count's attendance of student
 		print total
 		if i.stud_presence==1:
 			count=count+1
@@ -244,8 +249,6 @@ def profile(request):
 
 
 def home(request):
-
-	
 	return render(request,'home.html',{})
 
 
@@ -290,14 +293,14 @@ def test(request):
 	if request.method == 'POST':
 		form = TestForm(request.POST, request.FILES)
 		if form.is_valid():
-			newdoc = Test(testsheet = request.FILES['testsheet'])
+			newdoc = Test(testsheet= request.FILES['testsheet'])
 			newdoc.save()
-			handle_uploaded_file_test(request.FILES['testsheet'])
+			handle_uploaded_file_test(request.FILES['testsheet'],form.cleaned_data.get('test_no'),form.cleaned_data.get('test_avg'))
 
 
 			return HttpResponseRedirect(reverse('webapp.views.home'))
 	else:
-		form = AttendanceForm() # A empty, unbound form
+		form = TestForm() # A empty, unbound form
 
 	tests = Test.objects.all()
 
@@ -306,27 +309,23 @@ def test(request):
 
 	
 
-
-
-	
-
-def handle_uploaded_file_test(f):
+def handle_uploaded_file_test(f,no,avg):
 	#files=open(f.url, 'r')
 	for line in f:
 		line=line.split(',')
 		tmp=TestRecord.objects.create()
-		if isinstance(line[0],models.IntegerField):
-			tmp.stud_ID=line[0]
-		if isinstance(line[1],models.CharField):
-			tmp.stud_name=line[1]
-		if isinstance(line[2],models.IntegerField):
-			tmp.stud_score=line[2]
-		if isinstance(line[3],models.IntegerField):	
-			tmp.test_no=line[3]
-		if isinstance(line[4],models.IntegerField):
-			tmp.test_avg=line[4]
-
+		#if isinstance(line[0],models.IntegerField):
+		tmp.stud_ID=line[0]
+		#else:
+		
+		tmp.stud_name=line[1]
+		tmp.stud_score=line[2]
+		#tmp.test_no=line[3]
+		tmp.test_no=no
+		#tmp.test_avg=line[4]
+		tmp.test_avg=avg
 		tmp.save()
+
 
 
 def parent_data(request):
@@ -439,10 +438,10 @@ def attendance(request):
 		if form.is_valid():
 			newdoc = Attendance(attendancesheet = request.FILES['attendancesheet'])
 			newdoc.save()
-			handle_uploaded_file_att(request.FILES['attendancesheet'])
+			handle_uploaded_file_att(request.FILES['attendancesheet'], form.cleaned_data.get('attendancesheet'))
 
             
-        	return HttpResponseRedirect(reverse('webapp.views.home'))
+        	return HttpResponseRedirect(reverse('webapp.views.attendance'))
 	else:
 		form = AttendanceForm() # A empty, unbound form
 
@@ -460,7 +459,7 @@ def attendance(request):
 #	return render(request,'attendance.html',{})
 
 
-def handle_uploaded_file_att(f):
+def handle_uploaded_file_att(f,no):
 	#files=open(f.url, 'r')
 	for line in f:
 		line=line.split(',')
@@ -468,6 +467,7 @@ def handle_uploaded_file_att(f):
 		tmp.stud_ID=line[0]
 		tmp.stud_name=line[1]
 		tmp.stud_presence=line[2]
+		#tmp.attendance_no=no
 		#tmp.attendance_no=line[3]
 		tmp.save()	
 
